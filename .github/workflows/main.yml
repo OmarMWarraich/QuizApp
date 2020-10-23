@@ -35,9 +35,9 @@ jobs:
     
     - name: Creating build
       run: |
-        yarn build
         yarn add @material-ui/core
-        yarn add react-icons/fa
+        yarn add react-icons
+        yarn build
     
     - name: Installing surge  
       run: npm install -g surge
