@@ -1,41 +1,44 @@
-# This is a basic workflow to help you get started with Actions
+name: Tests
 
-name: CI
+on: [push, pull_request]
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    strategy:
+      matrix:
+        node: [10.14.x]
+        react: [
+          16.2.x,
+          16.3.x,
+          16.4.x,
+          16.5.x,
+          16.6.x,
+          16.7.x,
+          16.8.x,
+          16.9.x,
+          16.10.x,
+          16.11.x,
+          16.12.x
+        ]
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-    
-      # Install NodeJS
-      - name: Install NodeJS
-        uses: actions/setup-node@v2-beta
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: 12 
-      
-      # Install Yarn
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run "install yarn" command
+          node-version: ${{ matrix.node }}
+      - name: npm install and test
+        run: |
+          npm install
+          npm install react@${{ matrix.react }} react-dom@${{ matrix.react }} react-test-renderer@${{ matrix.react }}
+          npm list react react-dom react-test-renderer
+          npm run lint
+          npm run test
             
       # Build React App with Yarn
       - name: Build React App
-        run: yarn build
+        run: npm build
           
       # Install Surge
       - name: Install Surge
