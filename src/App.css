@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(rgba(218, 243, 159, 0.4), rgba(223, 111, 98, 0.4)), url(./Images/book.jpg);
+  background: linear-gradient(rgba(218, 243, 159, 0.4), rgba(223, 111, 98, 0.4)), url(./Images/bg.webp);
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -299,7 +299,7 @@ body {
   }
 
   body {
-       background: linear-gradient(rgba(218, 243, 159, 0.4), rgba(223, 111, 98, 0.4)), url(./Images/book.jpg);
+       background: linear-gradient(rgba(218, 243, 159, 0.4), rgba(223, 111, 98, 0.4)), url(./Images/bg.webp);
       background-position: center;
       background-size: cover;
       height: 100%;
