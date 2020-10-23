@@ -10,8 +10,7 @@ jobs:
       matrix:
         node: [10.14.x]
         react: [
-          16.2.x,
-          16.3.x
+          16.2.x
         ]
 
     steps:
@@ -23,7 +22,7 @@ jobs:
         run: |
           npm install
           npm install @material-ui/core
-          npm install @react-icons 
+          npm install react-icons 
           npm run test
             
       # Build React App with Yarn
