@@ -1,6 +1,6 @@
 import React from "react";
 import "./../App.css";
-import {FaGithub} from "react-icons/fa";
+// import {FaGithub} from "react-icons/fa";
 
 function Footer() {
   return (
@@ -21,7 +21,7 @@ function Footer() {
                   target="_blank"
                   className='setGit'
                 >
-                 <FaGithub></FaGithub>
+<!--                  <FaGithub></FaGithub> -->
                 </a>
               </div>
         
