@@ -22,8 +22,8 @@ jobs:
       - name: npm install and test
         run: |
           npm install
-          npm install react@${{ material-ui/core }} react-${{ react/icons }} react-test-renderer@${{ matrix.react }}
-          npm list react react-dom react-test-renderer
+          npm install @material-ui/core
+          npm install @react-icons 
           npm run test
             
       # Build React App with Yarn
