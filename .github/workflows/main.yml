@@ -11,16 +11,7 @@ jobs:
         node: [10.14.x]
         react: [
           16.2.x,
-          16.3.x,
-          16.4.x,
-          16.5.x,
-          16.6.x,
-          16.7.x,
-          16.8.x,
-          16.9.x,
-          16.10.x,
-          16.11.x,
-          16.12.x
+          16.3.x
         ]
 
     steps:
@@ -33,7 +24,6 @@ jobs:
           npm install
           npm install react@${{ matrix.react }} react-dom@${{ matrix.react }} react-test-renderer@${{ matrix.react }}
           npm list react react-dom react-test-renderer
-          npm run lint
           npm run test
             
       # Build React App with Yarn
